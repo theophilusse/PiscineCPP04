@@ -6,6 +6,11 @@ Cat::Cat() : Animal("Cat")
     std::cout << "Cat default constructor called" << std::endl;
 }
 
+Cat::Cat(const Cat &c) : Animal("Cat")
+{
+    _type = c.getType();
+}
+
 Cat::~Cat()
 {
     if (brain)
@@ -23,10 +28,10 @@ Cat& Cat::operator=(const Cat & c)
 {
     if (this != &c)
     {
-         ((Animal *)this) = (Animal *)&c;
+         _type = c.getType();
          if (brain)
              delete brain;
-         brain = new Brain(c.getBrain());
+         brain = new Brain(*c.getBrain());
     }
     return *this;
 }

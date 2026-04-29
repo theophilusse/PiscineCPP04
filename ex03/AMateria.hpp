@@ -17,6 +17,8 @@ public:
 	std::string const & getType() const; //Returns the materia type
 	virtual AMateria* clone() const = 0;
 	virtual void use(ICharacter& target) = 0;
+
+	const AMateria& operator=(const AMateria &m);
 };
 
 #endif

@@ -4,6 +4,7 @@
 #include "Ice.hpp"
 #include "Cure.hpp"
 #include "MateriaSource.hpp"
+#include <stddef.h>
 
 int main()
 {
@@ -29,7 +30,7 @@ int main()
 	tmp = dynamic_cast<Character*>(me)->getMateria(0);
 	me->unequip(0);
 	*floor += tmp;
-	tmp = nullptr;
+	tmp = NULL;
 
 	delete bob;
 	delete me;

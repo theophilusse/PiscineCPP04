@@ -27,4 +27,14 @@ std::string* Brain::getIdeaAdress(int index)
 void Brain::setIdea(int index, std::string idea)
 {
     _ideas[index % 100] = idea;
-}=
+}
+
+Brain& Brain::operator=(const Brain &b)
+{
+    if (this != &b)
+    {
+        for (int i = 0; i < 100; i++)
+            _ideas[i] = b.getIdea(i);
+    }
+    return *this;
+}

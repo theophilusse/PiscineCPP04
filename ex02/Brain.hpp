@@ -9,9 +9,14 @@ private:
     std::string _ideas[100];
 
 public:
-    Brain(void);
+    Brain();
+    Brain(const Brain &b);
+    ~Brain(void);
     std::string getIdea(int index) const;
+    std::string* getIdeaAdress(int index);
     void setIdea(int index, std::string idea);
+
+    Brain& operator=(const Brain &b);
 };
 
 #endif

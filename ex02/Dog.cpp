@@ -34,8 +34,9 @@ Dog& Dog::operator=(const Dog& d)
     if (this != &d)
     {
         Animal::operator=(d);
-        delete brain;              // on supprime l'ancien Brain
-        brain = new Brain(*d.getBrain());  // on crée un nouveau Brain
+        if (brain)
+            delete brain;
+        brain = new Brain(*d.getBrain());
     }
     return (*this);
 }

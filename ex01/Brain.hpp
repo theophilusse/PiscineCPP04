@@ -15,6 +15,8 @@ public:
     std::string getIdea(int index) const;
     std::string* getIdeaAdress(int index);
     void setIdea(int index, std::string idea);
+
+    Brain& operator=(const Brain &b);
 };
 
 #endif

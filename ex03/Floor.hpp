@@ -12,7 +12,7 @@ private:
 public:
 	Floor();
 	~Floor();
-    	Floor& operator+=(AMateria *m);
+    Floor& operator+=(AMateria *m);
 };
 
 #endif

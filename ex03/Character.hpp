@@ -4,6 +4,8 @@
 # include <iostream>
 # include "ICharacter.hpp"
 
+class AMateria;
+
 class Character : public ICharacter
 {
 private:
@@ -14,11 +16,13 @@ public:
 	Character(std::string name);
 	~Character() {}
 	std::string const & getName() const;
-	AMateria* getMateria(int idx);
+	AMateria* getMateria(int idx) const;
 	void equip(AMateria* m);
 	void unequip(int idx);
 	void use(int idx, ICharacter& target);
 	void fart(void);
+
+	Character& operator=(const Character &c);
 };
 
 #endif

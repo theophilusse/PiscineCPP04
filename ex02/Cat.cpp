@@ -34,8 +34,9 @@ Cat& Cat::operator=(const Cat& c)
     if (this != &c)
     {
         Animal::operator=(c);
-        delete brain;              // on supprime l'ancien Brain
-        brain = new Brain(*c.getBrain());  // on crée un nouveau Brain
+        if (brain)
+            delete brain;
+        brain = new Brain(*c.getBrain());
     }
     return (*this);
 }

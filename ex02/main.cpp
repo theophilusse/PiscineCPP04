@@ -31,6 +31,11 @@ int main(void)
     std::cout << "\n--- Tableau ---" << std::endl;
     const int   size = 6;
     Animal*     animals[size];
+
+    //Animal *bug;
+    //bug = new Animal(); // Not wroking test
+    //bug->makeSound();
+
     for (int i = 0; i < size / 2; i++)
         animals[i] = new Dog();
     for (int i = size / 2; i < size; i++)

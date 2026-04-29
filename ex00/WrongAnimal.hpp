@@ -10,9 +10,13 @@ protected:
 
 public:
     WrongAnimal();
+    WrongAnimal(const WrongAnimal &w);
     WrongAnimal(std::string type);
     ~WrongAnimal();
+    std::string getType() const;
     void makeSound() const;
+
+    WrongAnimal& operator=(const WrongAnimal & w);
 };
 
 #endif
