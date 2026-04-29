@@ -6,12 +6,7 @@ Floor::Floor() : _index(0)
 		_materia[i] = NULL;
 }
 
-Floor::~Floor()
-{
-	for (int i = 0; i < 100; i++)
-		if (_materia[i] != NULL)
-			delete _materia[i];
-}
+Floor::~Floor() {}
 
 Floor& Floor::operator+=(AMateria *m)
 {
